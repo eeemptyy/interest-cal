@@ -228,6 +228,8 @@ export default {
 
   methods: {
     save() {
+      this.calResult.report = [];
+      this.calResult.end = {};
       let saveLink = window.location.origin;
       let data = encodeURI(JSON.stringify(this.settings));
       saveLink = saveLink + "?load=" + data;
@@ -235,11 +237,13 @@ export default {
     },
 
     calReport() {
+      this.calResult.link = "";
       this.calResult.end = {};
       this.calResult.report = this.getReport();
     },
 
     calEnd() {
+      this.calResult.link = "";
       this.calResult.report = [];
       this.calPaid();
       let stMonth,
