@@ -119,7 +119,7 @@
     <button @click="save()">Save</button>
 
     <div>
-      <table v-show="calResult.report.length > 0">
+      <table v-if="calResult.report.length > 0">
         <thead>
           <tr>
             <th>งวดที่</th>
@@ -159,7 +159,7 @@
       {{ settings.principle | digits }}
     </div>
 
-    <div v-show="calResult.link != ''">
+    <div v-if="calResult.link != ''">
       Copy this link to save: {{ calResult.link }}
     </div>
 
